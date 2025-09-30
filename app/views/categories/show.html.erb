@@ -1,0 +1,24 @@
+<div class="home-container">
+  <h1 style="color: #2D3277;"><%= @category.name %></h1>
+  <p style="color: #666;"><%= @category.description %></p>
+
+  <% if user_signed_in? && current_user.admin? %>
+    <p>
+      <%= link_to "Editar Categoria", edit_category_path(@category), style: "color: #3483FA; margin-right: 10px;" %>
+      <%= link_to "Excluir Categoria", category_path(@category), method: :delete, data: { confirm: "Tem certeza?" }, style: "color: #FF0000;" %>
+    </p>
+  <% end %>
+
+  <h2 style="color: #2D3277; margin-top: 20px;">Produtos nesta Categoria</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <% @category.products.each do |product| %>
+      <div class="product-card">
+        <h3 style="color: #2D3277;"><%= product.title %></h3>
+        <p style="color: #666;"><%= number_to_currency(product.price, unit: "R$", separator: ",", delimiter: ".") %></p>
+        <%= link_to "Ver Produto", category_product_path(@category, product), style: "color: #3483FA;" %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Voltar para Categorias", categories_path, style: "color: #3483FA; margin-top: 20px; display: inline-block;" %>
+</div>

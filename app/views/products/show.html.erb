@@ -1,0 +1,19 @@
+<div class="home-container">
+  <h1 style="color: #2D3277;"><%= @product.title %></h1>
+  <p style="color: #666;"><%= @product.description %></p>
+  <p style="color: #2D3277; font-weight: bold;"><%= number_to_currency(@product.price, unit: "R$", separator: ",", delimiter: ".") %></p>
+  <p style="color: #666;">Estoque: <%= @product.stock_quantity %></p>
+  <p style="color: #666;">Categoria: <%= link_to @product.category.name, category_path(@product.category), style: "color: #3483FA;" %></p>
+  <% if @product.image_url.present? %>
+    <img src="<%= @product.image_url %>" alt="<%= @product.title %>" style="max-width: 300px; border-radius: 8px; margin: 10px 0;">
+  <% end %>
+
+  <% if user_signed_in? && @product.user == current_user %>
+    <p>
+      <%= link_to "Editar Produto", edit_category_product_path(@product.category, @product), style: "color: #3483FA; margin-right: 10px;" %>
+      <%= link_to "Excluir Produto", category_product_path(@product.category, @product), method: :delete, data: { confirm: "Tem certeza?" }, style: "color: #FF0000;" %>
+    </p>
+  <% end %>
+
+  <%= link_to "Voltar para Produtos", category_products_path(@product.category), style: "color: #3483FA; margin-top: 20px; display: inline-block;" %>
+</div>

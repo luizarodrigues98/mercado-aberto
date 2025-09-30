@@ -1,0 +1,82 @@
+/* Cores inspiradas no Mercado Livre */
+:root {
+    --ml-yellow: #FFE600;  /* Botões e highlights */
+    --ml-blue-dark: #2D3277;  /* Textos principais */
+    --ml-blue-light: #3483FA;  /* Links e accents */
+    --ml-white: #f8f25afe;  /* Fundo */
+    --ml-gray: #EEEEEE;  /* Bordas e sombras */
+  }
+  
+  /* Layout geral: Centrado, clean */
+  .devise-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--ml-white);
+    border: 1px solid var(--ml-gray);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header (como o logo amarelo do ML) */
+  .devise-header {
+    background: var(--ml-yellow);
+    color: var(--ml-blue-dark);
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Forms: Inputs arredondados, labels azuis */
+  .devise-form label {
+    color: var(--ml-blue-dark);
+    font-weight: bold;
+  }
+  
+  .devise-form input[type="email"],
+  .devise-form input[type="password"],
+  .devise-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid var(--ml-gray);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .devise-form input[type="submit"] {
+    background: var(--ml-yellow);
+    color: var(--ml-blue-dark);
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .devise-form input[type="submit"]:hover {
+    background: #FFD700;  /* Amarelo mais escuro no hover */
+  }
+  
+  /* Links: Azul claro */
+  .devise-links a {
+    color: var(--ml-blue-light);
+    text-decoration: none;
+  }
+  
+  .devise-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer ou mensagens: Cinza sutil */
+  .devise-footer {
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    margin-top: 20px;
+  }

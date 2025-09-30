@@ -1,0 +1,17 @@
+<div style="max-width: 400px; margin: 50px auto; padding: 20px; background: #FFF; border: 1px solid #EEEEEE; border-radius: 8px;">
+  <h2 style="color: #2D3277;"><%= @category.new_record? ? "Nova Categoria" : "Editar Categoria" %></h2>
+  <%= form_with model: @category, local: true do |form| %>
+    <div style="margin-bottom: 10px;">
+      <%= form.label :name, style: "color: #2D3277;" %><br>
+      <%= form.text_field :name, style: "width: 100%; padding: 8px; border: 1px solid #EEEEEE; border-radius: 4px;" %>
+    </div>
+    <div style="margin-bottom: 10px;">
+      <%= form.label :description, style: "color: #2D3277;" %><br>
+      <%= form.text_area :description, style: "width: 100%; padding: 8px; border: 1px solid #EEEEEE; border-radius: 4px;" %>
+    </div>
+    <div>
+      <%= form.submit "Criar Categoria", style: "background: #FFE600; color: #2D3277; padding: 10px; border: none; border-radius: 4px; width: 100%;" %>
+    </div>
+  <% end %>
+  <%= link_to "Voltar", categories_path, style: "color: #3483FA;" %>
+</div>

@@ -1,0 +1,16 @@
+<h1 style="color: #2D3277;">Produtos <%= @category ? "em #{@category.name}" : "" %></h1>
+   <p><%= link_to "Novo Produto", new_category_product_path(@category), style: "color: #3483FA;" if user_signed_in? && @category %></p>
+
+   <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+     <% @products.each do |product| %>
+       <div style="width: 200px; border: 1px solid #EEEEEE; border-radius: 8px; padding: 10px; text-align: center;">
+         <h3 style="color: #2D3277;"><%= product.title %></h3>
+         <p style="color: #666;"><%= number_to_currency(product.price, unit: "R$", separator: ",", delimiter: ".") %></p>
+         <%= link_to "Ver", category_product_path(product.category, product), style: "color: #3483FA;" %>
+         <% if user_signed_in? && product.user == current_user %>
+           <%= link_to "Editar", edit_category_product_path(product.category, product), style: "color: #3483FA;" %>
+           <%= link_to "Excluir", category_product_path(product.category, product), method: :delete, data: { confirm: "Tem certeza?" }, style: "color: #FF0000;" %>
+         <% end %>
+       </div>
+     <% end %>
+   </div>

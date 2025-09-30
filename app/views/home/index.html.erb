@@ -1,0 +1,17 @@
+<div class="home-container">
+  <h1 class="welcome-title">Bem-vindo ao Mercado Aberto</h1>
+  <p class="welcome-subtitle">Encontre os melhores produtos!</p>
+
+  <div class="featured-section">
+    <h2 class="featured-title">Produtos em Destaque</h2>
+    <div class="products-grid">
+      <% @products.each do |product| %>
+        <div class="product-card">
+          <h3 class="product-title"><%= product.title %></h3>
+          <p class="product-price"><%= number_to_currency(product.price, unit: "R$", separator: ",", delimiter: ".") %></p>
+          <%= link_to "Ver Produto", category_product_path(product.category, product), class: "product-link" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

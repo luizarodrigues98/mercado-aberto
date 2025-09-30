@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+   <html>
+     <head>
+       <title>Mercado Aberto</title>
+       <%= csrf_meta_tags %>
+       <%= csp_meta_tag %>
+       <%= stylesheet_link_tag "application", media: "all" %>
+     </head>
+     <body>
+        <nav class="navbar">
+          <%= link_to "Mercado Aberto", root_path, class: "navbar-brand" %>
+          <div class="navbar-links">
+            <% if user_signed_in? %>
+              <%= button_to "Sair", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "nav-link" %>
+              <%= link_to "Perfil", edit_user_registration_path, class: "nav-link" %>
+            <% else %>
+              <%= link_to "Entrar", new_user_session_path, class: "nav-button" %>
+              <%= link_to "Cadastrar", new_user_registration_path, class: "nav-link" %>
+            <% end %>
+          </div>
+        </nav>
+        <%= yield %>
+     </body>
+   </html>

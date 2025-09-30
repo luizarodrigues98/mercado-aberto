@@ -1,0 +1,16 @@
+<h1 style="color: #2D3277;">Categorias</h1>
+<p><%= link_to "Nova Categoria", new_category_path, style: "color: #3483FA;" if user_signed_in? %></p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+  <% @categories.each do |category| %>
+  <div style="width: 200px; border: 1px solid #EEEEEE; border-radius: 8px; padding: 10px;">
+      <h3 style="color: #2D3277;"><%= category.name %></h3>
+      <p style="color: #666;"><%= category.description %></p>
+      <%= link_to "Ver", category_path(category), style: "color: #3483FA;" %>
+      <% if user_signed_in? %>
+      <%= link_to "Editar", edit_category_path(category), style: "color: #3483FA;" %>
+      <%= link_to "Excluir", category_path(category), method: :delete, data: { confirm: "Tem certeza?" }, style: "color: #FF0000;" %>
+      <% end %>
+  </div>
+  <% end %>
+</div>

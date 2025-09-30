@@ -1,0 +1,285 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require devise
+ *= require home
+ *= require_tree .
+ *= require_self
+ */
+
+
+/* Home page styles */
+
+/* Main container */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f8f25afe;
+  }
+  
+  /* Welcome section */
+  .welcome-title {
+    color: #2D3277;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Featured products section */
+  .featured-section {
+    margin-top: 20px;
+  }
+  
+  .featured-title {
+    color: #2D3277;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  
+  .product-card {
+    width: 200px;
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-title {
+    color: #2D3277;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  
+  .product-price {
+    color: #666;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .product-link {
+    color: #3483FA;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid #3483FA;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.2s ease;
+  }
+  
+  .product-link:hover {
+    background-color: #3483FA;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Navigation styles */
+  .navbar {
+    background: #FFE600;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2D3277;
+    text-decoration: none;
+  }
+  
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .nav-link {
+    color: #3483FA;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-link:hover {
+    color: #2D3277;
+    text-decoration: none;
+  }
+  
+  .nav-button {
+    background: #3483FA;
+    color: #FFF;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #2D3277;
+    color: #FFF;
+    text-decoration: none;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .home-container {
+      padding: 15px;
+    }
+    
+    .welcome-title {
+      font-size: 2rem;
+    }
+    
+    .products-grid {
+      justify-content: center;
+    }
+    
+    .product-card {
+      width: 180px;
+    }
+    
+    .navbar {
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px;
+    }
+    
+    .navbar-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-card {
+      width: 100%;
+      max-width: 250px;
+    }
+    
+    .welcome-title {
+      font-size: 1.8rem;
+    }
+  }
+
+  
+/* Cores inspiradas no Mercado Livre */
+:root {
+    --ml-yellow: #FFE600;  /* Botões e highlights */
+    --ml-blue-dark: #2D3277;  /* Textos principais */
+    --ml-blue-light: #3483FA;  /* Links e accents */
+    --ml-white: #f8f25afe;  /* Fundo */
+    --ml-gray: #EEEEEE;  /* Bordas e sombras */
+  }
+  
+  /* Layout geral: Centrado, clean */
+  .devise-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--ml-white);
+    border: 1px solid var(--ml-gray);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header (como o logo amarelo do ML) */
+  .devise-header {
+    background: var(--ml-yellow);
+    color: var(--ml-blue-dark);
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Forms: Inputs arredondados, labels azuis */
+  .devise-form label {
+    color: var(--ml-blue-dark);
+    font-weight: bold;
+  }
+  
+  .devise-form input[type="email"],
+  .devise-form input[type="password"],
+  .devise-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid var(--ml-gray);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .devise-form input[type="submit"] {
+    background: var(--ml-yellow);
+    color: var(--ml-blue-dark);
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .devise-form input[type="submit"]:hover {
+    background: #FFD700;  /* Amarelo mais escuro no hover */
+  }
+  
+  /* Links: Azul claro */
+  .devise-links a {
+    color: var(--ml-blue-light);
+    text-decoration: none;
+  }
+  
+  .devise-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer ou mensagens: Cinza sutil */
+  .devise-footer {
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    margin-top: 20px;
+  }
